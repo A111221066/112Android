@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?>parent, View view,int position,long id){
-
+                TextView output=(TextView) findViewById(R.id.lblOutput);
+                output.setText("你是住在:"+cities[position]);
+                Toast.makeText(MainActivity.this,"你是住在:"+cities[position],Toast.LENGTH_SHORT).show();
             }
         });
     }
